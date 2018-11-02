@@ -13,6 +13,37 @@
 </head>
 
 <body>
+	<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'My List')" id="defaultOpen">My List</button>
+  <button class="tablinks" onclick="openTab(event, 'Popular')">Popular</button>
+  <button class="tablinks" onclick="openTab(event, 'Created by Me')">Created by Me</button>
+</div>
+
+<div id="My List" class="tabcontent">
+  <h3>My List</h3>
+  <list>
+    <a href="challenge.html">challenge 1</a><br>
+    <a href="challenge.html">challenge 2</a><br>
+  </list>
+</div>
+
+<div id="Popular" class="tabcontent">
+  <h3>Popular</h3>
+	<list>
+    <a href="challenge.html">challenge 1</a><br>
+    <a href="challenge.html">challenge 2</a><br>
+  </list>
+</div>
+
+<div id="Created by Me" class="tabcontent">
+  <h3>Created by Me</h3>
+	<list>
+    <a href="challenge.html">challenge 1</a><br>
+    <a href="challenge.html">challenge 2</a><br>
+  </list>
+</div>
+
+
 	<div class="container">
 		<!-- h1 through h6 are headers. The higher the number, the smaller the header -->
 		<!-- p means paragraph -->
@@ -26,10 +57,11 @@
 
     <a href="create_challenge.html" id="createChallenge" class="btn btn-primary btn-lg">Create a Challenge</a>
     <br>
-    <br>      
+    <br>
     <a href="search.html" class="btn btn-primary btn-lg"> search </a>
   <!-- include JavaScript near the end of the HTML file -->
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/challenger.js"></script>
 </body>
 </html>
