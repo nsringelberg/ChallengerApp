@@ -13,4 +13,11 @@ function initializePage() {
 
 	// Add any additional listeners here
 	// example: $("#div-id").click(functionToCall);
+  $(".tab").click(openTab);
+  console.log("js initialized");
+}
+
+function openTab(e){
+  $(this "tablinks").addClass("active");
+  $("#challenges").show();
 }
