@@ -14,9 +14,9 @@
 
 <body>
 	<div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'My List')" id="defaultOpen">My List</button>
-  <button class="tablinks" onclick="openCity(event, 'Popular')">Popular</button>
-  <button class="tablinks" onclick="openCity(event, 'Created by Me')">Created by Me</button>
+  <button class="tablinks" onclick="openTab(event, 'My List')" id="defaultOpen">My List</button>
+  <button class="tablinks" onclick="openTab(event, 'Popular')">Popular</button>
+  <button class="tablinks" onclick="openTab(event, 'Created by Me')">Created by Me</button>
 </div>
 
 <div id="My List" class="tabcontent">
@@ -43,24 +43,7 @@
   </list>
 </div>
 
-<script>
-function openCity(evt, cityName) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
-}
 
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-</script>
 	<div class="container">
 		<!-- h1 through h6 are headers. The higher the number, the smaller the header -->
 		<!-- p means paragraph -->
@@ -79,6 +62,6 @@ document.getElementById("defaultOpen").click();
   <!-- include JavaScript near the end of the HTML file -->
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script src="js.challenger.js"></script>
+	<script src="js/challenger.js"></script>
 </body>
 </html>
