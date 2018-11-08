@@ -7,24 +7,12 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
-  var source = $("#entry-template").html();
-  var template = Handlebars.compile(source);
-
-  var parentDiv = $("#templatedChallenges");
-  for(var game in games){
-    var challengeList = games[game];
-    for (var i=0; i<challengeList.length; i++){
-      var currData = challengeList[i];
-      currData["GameTitle"] = game
-      var currHtml = template(currData);
-      parentDiv.append(currHtml);
-    }
-  }
 
 
 	// Add any additional listeners here
 	// example: $("#div-id").click(functionToCall);
 }
+
 
 
 function openTab(evt, tab) {
