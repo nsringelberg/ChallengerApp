@@ -1,5 +1,5 @@
-var games = {'Mario' : [{'ChallengeTitle' : 'beat the game naked',
-                         'ChallengeDescription' : 'be naked while beating the game',
+var games = {'Mario' : [{'ChallengeTitle' : 'beat the game without dying',
+                         'ChallengeDescription' : 'dont die in the game',
                          'difficulty' : 'border-warning'},
                         {'ChallengeTitle' : 'beat the game without breathing',
                          'ChallengeDescription' : 'dont breathe',
