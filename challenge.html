@@ -37,61 +37,27 @@
   </nav>
   <a href="index.html">home</a>
 
-  <div class="card border-warning mb-3" style="width: 35rem;">
+
+<script id="entry-template" type="text/x-handlebars-template">  
+  <div class="card {{difficulty}} mb-3" style="width: 35rem;">
    <div class="card-body">
-     <h5 class="card-title">Card title</h5>
-     <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+     <h5 class="card-title">{{ChallengeTitle}}</h5>
+     <h6 class="card-subtitle mb-2 text-muted">For {{GameTitle}}</h6>
+     <p class="card-text">{{ChallengeDescription}}</p>
      <a href="#" class="card-link">Add to My List</a>
      <a href="#" class="card-link">Mark as Completed</a>
    </div>
   </div>
-  <div class="card border-success mb-3" style="width: 35rem;">
-   <div class="card-body">
-     <h5 class="card-title">Card title</h5>
-     <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-     <a href="#" class="card-link">Add to My List</a>
-     <a href="#" class="card-link">Mark as Completed</a>
-   </div>
-  </div>
-  <div class="card border-danger mb-3" style="width: 35rem;">
-   <div class="card-body">
-     <h5 class="card-title">Card title</h5>
-     <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-     <a href="#" class="card-link">Add to My List</a>
-     <a href="#" class="card-link">Mark as Completed</a>
-   </div>
-  </div>
-  <nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="#" tabindex="-1">Previous</a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#">Next</a>
-    </li>
-  </ul>
-</nav>
-  <br>
-  <br>
-  <a id="addToMyList" class="btn btn-primary btn-lg">Add to My List</a>
-  <br>
-  <br>
-  <a id="markAsCompleted" class="btn btn-primary btn-lg">Mark as Completed</a>
-  <br>
-  <br>
-  <br>
+</script>
+
+  <div id="templatedChallenges"></div>
+
   <!-- include JavaScript near the end of the HTML file -->
   
   <div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'Comments')" id="defaultOpen">Comments</button>
-  <button class="tablinks" onclick="openCity(event, 'Videos')">Videos</button>
-  <button class="tablinks" onclick="openCity(event, 'Related')">Related</button>
+  <button class="tablinks" onclick="openTab(event, 'Comments')" id="defaultOpen">Comments</button>
+  <button class="tablinks" onclick="openTab(event, 'Videos')">Videos</button>
+  <button class="tablinks" onclick="openTab(event, 'Related')">Related</button>
 </div>
 
 
@@ -118,40 +84,13 @@
     <p>related game 2</p>
   </list>
 </div>
-<script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCFJSXskw6NSYjh9tN0r-QueMKFBWf8Ix8",
-    authDomain: "challenger1-5a48f.firebaseapp.com",
-    databaseURL: "https://challenger1-5a48f.firebaseio.com",
-    projectId: "challenger1-5a48f",
-    storageBucket: "",
-    messagingSenderId: "938560133788"
-  };
-  firebase.initializeApp(config);
-</script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script>
-function openCity(evt, cityName) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
-}
 
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-</script>
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/handlebars-v4.0.12.js"></script>
+  <script src="js/challengeData.js"></script>
+  <script src="js/challenges.js"></script>
+
 </body>
 
 

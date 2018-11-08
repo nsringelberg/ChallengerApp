@@ -8,7 +8,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/bootstrap-theme.min.css" rel="stylesheet">
   <!-- this might need to change -->
-  <link href="css/introHCI.css" rel="stylesheet">
+  <link href="css/challenger.css" rel="stylesheet">
 
 </head>
 <body>
@@ -16,12 +16,25 @@
   <p>
   this is where you will create a challenge for a game
   </p>
-  Fill er in: <input type="text" name="create"><br>
+  Game: <input type="text" name="create" id="gameTitle"><br>
+  Challenge Title: <input type="text" name="create" id="challengeTitle"><br>
+  Description: <input type="text" name="create" id="description"><br>
+  Difficulty: <input type="radio" name="difficultyBtn" value="easy"> Easy 
+              <input type="radio" name="difficultyBtn" value="medium"> Medium 
+              <input type="radio" name="difficultyBtn" value="hard"> Hard <br>
 
-  <a href="challenge.html" class="btn btn-primary btn-lg">Create</a>
+  <button class="btn btn-primary btn-lg" id="createButton">Create</button>
+
+  <div class="alert alert-danger hidden" id="creationError">
+    Please fill out all fields
+  </div>
+
   <!-- include JavaScript near the end of the HTML file -->
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/challengeData.js"></script>
+  <script src="js/createChallenge.js"></script>
+  <script src="js/handlebars-v4.0.12.js"></script>
 </body>
 
 

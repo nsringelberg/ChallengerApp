@@ -7,13 +7,12 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
-	$("#testjs").click(function(e) {
-		$('.jumbotron h1').text("Javascript is connected");
-	});
+
 
 	// Add any additional listeners here
 	// example: $("#div-id").click(functionToCall);
 }
+
 
 
 function openTab(evt, tab) {
