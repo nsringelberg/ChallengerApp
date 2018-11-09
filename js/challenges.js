@@ -45,7 +45,7 @@ function initializePage() {
   }
   currData["GameTitle"] = gameTitle;
   currData["index"] = idx;
-  currData["uid"] = gameTitle + idx;
+  currData["uid"] = gameTitle.replace(/\s/g,'') + idx;
   var currHtml = template(currData);
   parentDiv.append(currHtml);
 
@@ -66,5 +66,5 @@ function addToList(title, idx){
   myListChallenges.push(idx);
   localStorage.setItem("myListGames", JSON.stringify(myListGames));
   localStorage.setItem("myListChallenges", JSON.stringify(myListChallenges));
-  $("#" + title+idx).html("Added");
+  $("#" + title.replace(/\s/g, '')+idx).html("Added");
 }
