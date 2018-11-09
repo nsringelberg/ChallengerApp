@@ -41,6 +41,7 @@ function initializePage() {
       }
       currData["GameTitle"] = game;
       currData["index"] = j;
+      currData["uid"] = game + j;
       var currHtml = template(currData);
       parentDiv.append(currHtml);
     }
@@ -63,4 +64,5 @@ function addToList(title, idx){
   myListChallenges.push(idx);
   localStorage.setItem("myListGames", JSON.stringify(myListGames));
   localStorage.setItem("myListChallenges", JSON.stringify(myListChallenges));
+  $("#" + title+idx).html("Added");
 }
