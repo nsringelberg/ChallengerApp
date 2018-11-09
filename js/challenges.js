@@ -7,6 +7,7 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
+
   var source = $("#entry-template").html();
   var template = Handlebars.compile(source);
 
@@ -21,8 +22,13 @@ function initializePage() {
     }
   }
 
-  for(var i=0; i<localStorage.length; i++){
-    game = localStorage.key(i);
+  var g = localStorage.getItem("Games");
+  var games2 = JSON.parse(g);
+  if(!g){
+    games2 = [];
+  }
+  for(var i=0; i<games2.length; i++){
+    game = games2[i];
     var challengeList = JSON.parse(localStorage[game]);
     for (var j=0; j<challengeList.length; j++){
       var currData = challengeList[j];
@@ -34,8 +40,29 @@ function initializePage() {
         currData["difficulty"] = "border-danger";
       }
       currData["GameTitle"] = game;
+      currData["index"] = j;
+      currData["uid"] = game + j;
       var currHtml = template(currData);
       parentDiv.append(currHtml);
     }
   }
+
+}
+
+
+function addToList(title, idx){
+  var myListGames = localStorage.getItem("myListGames");
+  var myListChallenges = localStorage.getItem("myListChallenges");
+  if(myListGames == null){
+    myListGames = [];
+    myListChallenges = [];
+  } else {
+    myListGames = JSON.parse(myListGames);
+    myListChallenges = JSON.parse(myListChallenges);
+  }
+  myListGames.push(title);
+  myListChallenges.push(idx);
+  localStorage.setItem("myListGames", JSON.stringify(myListGames));
+  localStorage.setItem("myListChallenges", JSON.stringify(myListChallenges));
+  $("#" + title+idx).html("Added");
 }
