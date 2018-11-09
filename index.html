@@ -15,8 +15,9 @@
 </head>
 
 <body>
+
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Challenge Zone</a>
+    <a class="navbar-brand" href="index.html">Challenge Zone</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -35,17 +36,19 @@
       </ul>
     </div>
   </nav>
+
 	<div class="navbar navbar-expand-lg navbar-light bg-light tab">
   <button class="tablinks" onclick="openTab(event, 'My List')" id="defaultOpen">My List</button>
   <button class="tablinks" onclick="openTab(event, 'Popular')">Popular</button>
   <button class="tablinks" onclick="openTab(event, 'Created by Me')">Created by Me</button>
 </div>
 
+
+
 <div id="My List" class="tabcontent">
   <h3>My List</h3>
   <list>
-    <a href="challenge.html">challenge 1</a><br>
-    <a href="challenge.html">challenge 2</a><br>
+    <div id="myChallenges"></div>
   </list>
 </div>
 
@@ -82,8 +85,14 @@
     <br>
     <a href="search.html" class="btn btn-primary btn-lg"> search </a>
   <!-- include JavaScript near the end of the HTML file -->
+
+<script id="challenge-template" type="text/x-handlebars-template"> 
+  {{ChallengeTitle}} for {{GameTitle}} <br>
+</script>
+
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+  <script src="js/handlebars-v4.0.12.js"></script>
 	<script src="js/challenger.js"></script>
 </body>
 </html>

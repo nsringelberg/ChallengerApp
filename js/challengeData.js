@@ -8,3 +8,4 @@ var games = {'Mario' : [{'ChallengeTitle' : 'beat the game without dying',
                             'ChallengeDescription' : 'dont build',
                             'difficulty' : 'border-danger'}]
             }
+

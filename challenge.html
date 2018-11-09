@@ -14,7 +14,7 @@
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Challenge Zone</a>
+      <a class="navbar-brand" href="index.html">Challenge Zone</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -32,6 +32,8 @@
       </ul>
     </div>
   </nav>
+
+
 <script id="entry-template" type="text/x-handlebars-template">
 <h2 align = 'center'>{{ChallengeTitle}}</h2>
 <div class="card {{difficulty}} mb-3" style="max-width: fill;">
@@ -53,12 +55,13 @@
   <br>
   <br>
   <br>
+
   <!-- include JavaScript near the end of the HTML file -->
 
   <div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'Comments')" id="defaultOpen">Comments</button>
-  <button class="tablinks" onclick="openCity(event, 'Videos')">Videos</button>
-  <button class="tablinks" onclick="openCity(event, 'Related')">Related</button>
+  <button class="tablinks" onclick="openTab(event, 'Comments')" id="defaultOpen">Comments</button>
+  <button class="tablinks" onclick="openTab(event, 'Videos')">Videos</button>
+  <button class="tablinks" onclick="openTab(event, 'Related')">Related</button>
 </div>
 
 
@@ -85,45 +88,14 @@
     <p>related game 2</p>
   </list>
 </div>
-<script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCFJSXskw6NSYjh9tN0r-QueMKFBWf8Ix8",
-    authDomain: "challenger1-5a48f.firebaseapp.com",
-    databaseURL: "https://challenger1-5a48f.firebaseio.com",
-    projectId: "challenger1-5a48f",
-    storageBucket: "",
-    messagingSenderId: "938560133788"
-  };
-  firebase.initializeApp(config);
-</script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script>
-function openCity(evt, cityName) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
-}
 
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-</script>
-<script src="https://code.jquery.com/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/handlebars-v4.0.12.js"></script>
-<script src="js/challengeData.js"></script>
-<script src="js/challenges.js"></script>
+
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/handlebars-v4.0.12.js"></script>
+  <script src="js/challengeData.js"></script>
+  <script src="js/challenges.js"></script>
+
 </body>
 
 
