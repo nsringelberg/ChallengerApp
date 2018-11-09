@@ -61,5 +61,5 @@ function createChallenge(){
 
   list.push(challenge);
   localStorage.setItem(gameTitle, JSON.stringify(list));
-  window.location.assign("challenge.html");
+  window.location.assign("challenge.html?challengeID=" + gameTitle + "%" + (list.length-1));
 }
