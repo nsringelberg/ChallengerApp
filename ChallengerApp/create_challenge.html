@@ -1,0 +1,44 @@
+<!doctype html>
+
+<html>
+<head>
+  <title>Challenger</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+  <!-- this might need to change -->
+  <link href="css/challenger.css" rel="stylesheet">
+
+</head>
+<body>
+  <a href="index.html">home</a>
+  <p>
+  this is where you will create a challenge for a game
+  </p>
+  Game: <input type="text" name="create" id="gameTitle"><br>
+  Challenge Title: <input type="text" name="create" id="challengeTitle"><br>
+  Description: <input type="text" name="create" id="description"><br>
+  Difficulty: <input type="radio" name="difficultyBtn" value="easy"> Easy 
+              <input type="radio" name="difficultyBtn" value="medium"> Medium 
+              <input type="radio" name="difficultyBtn" value="hard"> Hard <br>
+
+  <button class="btn btn-primary btn-lg" id="createButton">Create</button>
+
+  <div class="alert alert-danger hidden" id="creationError">
+    Please fill out all fields
+  </div>
+  <div class="alert alert-danger hidden" id="spaghetti">
+    I swear to god please don't do that
+  </div>
+
+  <!-- include JavaScript near the end of the HTML file -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/challengeData.js"></script>
+  <script src="js/createChallenge.js"></script>
+  <script src="js/handlebars-v4.0.12.js"></script>
+</body>
+
+
+</html>

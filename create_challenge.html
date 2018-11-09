@@ -2,6 +2,8 @@
 
 <html>
 <head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
   <title>Challenger</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +14,26 @@
 
 </head>
 <body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Challenge Zone</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="search.html">Games</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="create_challenge.html">Create Challenge</a>
+          </li>
+      </ul>
+    </div>
+  </nav>
   <a href="index.html">home</a>
   <p>
   this is where you will create a challenge for a game
@@ -19,17 +41,14 @@
   Game: <input type="text" name="create" id="gameTitle"><br>
   Challenge Title: <input type="text" name="create" id="challengeTitle"><br>
   Description: <input type="text" name="create" id="description"><br>
-  Difficulty: <input type="radio" name="difficultyBtn" value="easy"> Easy 
-              <input type="radio" name="difficultyBtn" value="medium"> Medium 
+  Difficulty: <input type="radio" name="difficultyBtn" value="easy"> Easy
+              <input type="radio" name="difficultyBtn" value="medium"> Medium
               <input type="radio" name="difficultyBtn" value="hard"> Hard <br>
 
   <button class="btn btn-primary btn-lg" id="createButton">Create</button>
 
   <div class="alert alert-danger hidden" id="creationError">
     Please fill out all fields
-  </div>
-  <div class="alert alert-danger hidden" id="spaghetti">
-    I swear to god please don't do that
   </div>
 
   <!-- include JavaScript near the end of the HTML file -->
