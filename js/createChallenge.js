@@ -32,25 +32,6 @@ function createChallenge(){
                    "difficulty": difficulty};
 
 
-  var games = localStorage.getItem("Games");
-  if(games == null){
-    games = [];
-  }else{
-    games = JSON.parse(games);
-  }
-
-  if(gameTitle == "Games"){
-    $("#spaghetti").removeClass("hidden");
-    return;
-  } else{
-    $("#spaghetti").addClass("hidden");
-  }
-
-  if(!games.includes(gameTitle)){
-    games.push(gameTitle);
-    localStorage.setItem("Games", JSON.stringify(games));
-  }
-
   var challenges = localStorage.getItem(gameTitle);
   var list = [];
   if(challenges == null){

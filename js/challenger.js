@@ -7,31 +7,8 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
-    var source = $("#challenge-template").html();
-    var template = Handlebars.compile(source);
-
-    var parentDiv = $("#myChallenges");
-
-    var myGames = localStorage.getItem("myListGames");
-    var myChallenges = localStorage.getItem("myListChallenges");
 
 
-    if(myGames == null){
-        myGames = [];
-        myChallenges = [];
-    } else {
-        myGames = JSON.parse(myGames);
-        myChallenges = JSON.parse(myChallenges);
-    }
-
-    for(var i=0;i < myGames.length; i++){
-        game = myGames[i];
-        challenge = myChallenges[i];
-        var challengeData = JSON.parse(localStorage.getItem(game))[challenge];
-        challengeData["GameTitle"] = game;
-        var currHtml = template(challengeData);
-        parentDiv.append(currHtml);
-    }
 	// Add any additional listeners here
 	// example: $("#div-id").click(functionToCall);
 }
