@@ -2,6 +2,7 @@
 
 <html>
 <head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <title>Challenger</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,18 +13,52 @@
 
 </head>
 <body>
-  <a href="index.html">home</a>
-  <p>
-  this is the page for a game
-  </p>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html">Challenge Zone</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="search.html">Games</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="create_challenge.html">Create Challenge</a>
+          </li>
+      </ul>
+    </div>
+  </nav>
 
-  <list>
-    <a href="challenge.html">challenge 1</a><br>
-    <a href="challenge.html">challenge 2</a><br>
-  </list>
+<script id="header-template" type="text/x-handlebars-template">
+  <h1>Challenges for {{GameTitle}}</h1>
+</script>
+<div id="yeet"></div> 
+
+ <script id="entry-template" type="text/x-handlebars-template">
+  <div class="card {{diffBorder}} mb-3" style="width: fill;">
+   <div class="card-body">
+     <h5 class="card-title"> {{ChallengeTitle}}</h5>
+     <h6 class="card-subtitle mb-2 text-muted">for {{GameTitle}}</h6>
+     <p class="card-text">{{ChallengeDescription}}</p>
+     <a href="challenge.html?challengeID={{uid}}" class="card-link">Go to Challenge</a>
+   </div>
+  </div>
+</script>
+
+
+<div id="templatedChallenges"></div>
+
   <!-- include JavaScript near the end of the HTML file -->
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/handlebars-v4.0.12.js"></script>
+  <script src="js/challengeData.js"></script>
+  <script src="js/games.js"></script>
 </body>
 
 

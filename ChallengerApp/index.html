@@ -2,8 +2,6 @@
 
 <html>
 <head>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
 	<title>Challenger</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,28 +13,6 @@
 </head>
 
 <body>
-
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="index.html">Challenge Zone</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="search.html">Games</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="create_challenge.html">Create Challenge</a>
-          </li>
-      </ul>
-    </div>
-  </nav>
-
 	<div class="navbar navbar-expand-lg navbar-light bg-light tab">
   <button class="tablinks" onclick="openTab(event, 'My List')" id="defaultOpen">My List</button>
   <button class="tablinks" onclick="openTab(event, 'Popular')">Popular</button>
@@ -78,7 +54,7 @@
 		</div>
 
 
-
+		<h4>Challenges</h4>
 
     <a href="create_challenge.html" id="createChallenge" class="btn btn-primary btn-lg">Create a Challenge</a>
     <br>
@@ -87,13 +63,12 @@
   <!-- include JavaScript near the end of the HTML file -->
 
 <script id="challenge-template" type="text/x-handlebars-template"> 
-  <a href="challenge.html?challengeID={{GameTitle}}%{{index}}"> {{ChallengeTitle}} for {{GameTitle}} </a><br>
+  {{ChallengeTitle}} for {{GameTitle}} <br>
 </script>
 
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
   <script src="js/handlebars-v4.0.12.js"></script>
-  <script src="js/challengeData.js"></script>
 	<script src="js/challenger.js"></script>
 </body>
 </html>

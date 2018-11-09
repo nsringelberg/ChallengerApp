@@ -7,8 +7,6 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
-    initData();
-
     var source = $("#challenge-template").html();
     var template = Handlebars.compile(source);
 
@@ -31,7 +29,6 @@ function initializePage() {
         challenge = myChallenges[i];
         var challengeData = JSON.parse(localStorage.getItem(game))[challenge];
         challengeData["GameTitle"] = game;
-        challengeData["index"] = challenge;
         var currHtml = template(challengeData);
         parentDiv.append(currHtml);
     }
@@ -54,20 +51,5 @@ function openTab(evt, tab) {
     document.getElementById(tab).style.display = "block";
     evt.currentTarget.className += " active";
 }
-
-function initData(){
-  var listOfGames = localStorage.getItem("Games");
-  if(listOfGames == null){
-    listOfGames = [];
-    //add the stuff from challengeData
-    for(game in games){
-        var gameInfo = games[game];
-        listOfGames.push(game);
-        localStorage.setItem(game, JSON.stringify(gameInfo));
-    }
-    localStorage.setItem("Games", JSON.stringify(listOfGames));
-  }
-}
-
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();

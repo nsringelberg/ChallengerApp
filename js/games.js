@@ -22,32 +22,39 @@ function initializePage() {
 
 //grab title
   var queryParams = new URLSearchParams(window.location.search);
-  var uid = queryParams.get('challengeID');
-  var gameTitle = uid.split("%")[0];
-  var idx = uid.split("%")[1];
+  var gameTitle = queryParams.get('title');
 
+//put game title in header
+  var sourceH = $("#header-template").html();
+  var templateH = Handlebars.compile(sourceH);
+
+  var parentDivH = $("#yeet");
+  var html = templateH({"GameTitle": gameTitle});
+  parentDivH.append(html);
 
 //put challenges in
   var challengeList = JSON.parse(localStorage[gameTitle]);
-  var currData = challengeList[idx];
-  if (currData["difficulty"] == "easy"){
-    currData["difficulty"] = "text-white bg-success";
-    currData['diffBorder'] = "border-success";
-    currData["diffName"] = 'Easy'
-  } else if (currData["difficulty"] == "medium"){
-    currData["difficulty"] = "bg-warning";
-    currData['diffBorder'] = "border-warning";
-    currData["diffName"] = "Medium"
-  } else{
-    currData["difficulty"] = "text-white bg-danger";
-    currData['diffBorder'] = "border-danger";
-    currData["diffName"] = "Hard"
+  for (var j=0; j<challengeList.length; j++){
+    var currData = challengeList[j];
+    if (currData["difficulty"] == "easy"){
+      currData["difficulty"] = "text-white bg-success";
+      currData['diffBorder'] = "border-success";
+      currData["diffName"] = 'Easy'
+    } else if (currData["difficulty"] == "medium"){
+      currData["difficulty"] = "bg-warning";
+      currData['diffBorder'] = "border-warning";
+      currData["diffName"] = "Medium"
+    } else{
+      currData["difficulty"] = "text-white bg-danger";
+      currData['diffBorder'] = "border-danger";
+      currData["diffName"] = "Hard"
+    }
+    currData["GameTitle"] = gameTitle;
+    currData["index"] = j;
+    currData["uid"] = gameTitle + "%" + j;
+    var currHtml = template(currData);
+    parentDiv.append(currHtml);
   }
-  currData["GameTitle"] = gameTitle;
-  currData["index"] = idx;
-  currData["uid"] = gameTitle + idx;
-  var currHtml = template(currData);
-  parentDiv.append(currHtml);
 
 }
 
