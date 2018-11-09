@@ -1,11 +1,11 @@
 var games = {'Mario' : [{'ChallengeTitle' : 'beat the game without dying',
                          'ChallengeDescription' : 'dont die in the game',
-                         'difficulty' : 'border-warning'},
+                         'difficulty' : 'medium'},
                         {'ChallengeTitle' : 'beat the game without breathing',
                          'ChallengeDescription' : 'dont breathe',
-                         'difficulty' : 'border-danger'}],
+                         'difficulty' : 'hard'}],
              'Fortnite' : [{'ChallengeTitle' : 'win without building',
                             'ChallengeDescription' : 'dont build',
-                            'difficulty' : 'border-danger'}]
+                            'difficulty' : 'hard'}]
             }
 

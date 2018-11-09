@@ -40,6 +40,8 @@
   <div class="card-header">{{diffName}} Challenge</div>
   <div class="card-body">
     <p class="card-text">{{ChallengeDescription}}</p>
+    <div class="btn btn-primary card-link" id="{{uid}}" 
+         onClick="addToList('{{GameTitle}}', {{index}})">Add to My List</div>
   </div>
 </div>
 </script>
@@ -48,7 +50,7 @@
 
   <br>
   <br>
-  <a id="addToMyList"  class="text-white btn btn-primary btn-block">Add to My List</a>
+
   <br>
   <br>
   <!--<a id="markAsCompleted" class="text-white btn btn-primary btn-block">Mark as Completed</a>-->

@@ -14,7 +14,7 @@
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Challenge Zone</a>
+    <a class="navbar-brand" href="index.html">Challenge Zone</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -33,32 +33,32 @@
       </ul>
     </div>
   </nav>
-  <a href="index.html">home</a>
-  <p>
-  this is the page for a game
-  </p>
-  <script id="entry-template" type="text/x-handlebars-template">
+
+<script id="header-template" type="text/x-handlebars-template">
+  <h1>Challenges for {{GameTitle}}</h1>
+</script>
+<div id="yeet"></div> 
+
+ <script id="entry-template" type="text/x-handlebars-template">
   <div class="card {{diffBorder}} mb-3" style="width: fill;">
    <div class="card-body">
      <h5 class="card-title"> {{ChallengeTitle}}</h5>
      <h6 class="card-subtitle mb-2 text-muted">for {{GameTitle}}</h6>
      <p class="card-text">{{ChallengeDescription}}</p>
-     <a href="#" class="card-link">Add to My List</a>
-     <a href="challenge.html" class="card-link">Go to Challenge</a>
+     <a href="challenge.html?challengeID={{uid}}" class="card-link">Go to Challenge</a>
    </div>
   </div>
 </script>
+
+
 <div id="templatedChallenges"></div>
-  <list>
-    <a href="challenge.html">challenge 1</a><br>
-    <a href="challenge.html">challenge 2</a><br>
-  </list>
+
   <!-- include JavaScript near the end of the HTML file -->
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/handlebars-v4.0.12.js"></script>
   <script src="js/challengeData.js"></script>
-  <script src="js/challenges.js"></script>
+  <script src="js/games.js"></script>
 </body>
 
 

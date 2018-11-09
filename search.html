@@ -25,24 +25,31 @@
           <li class="nav-item">
             <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="search.html">Games</a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="create_challenge.html">Create Challenge</a>
           </li>
       </ul>
     </div>
   </nav>
-  <p>
-  this is the search page
-  </p>
 
-  <a href="game.html"> this is a game that you searched for </a>
+<div class="list-group">
+      <script id="entry-template" type="text/x-handlebars-template">
+    <a href="game.html?title={{GameTitle}}" class="list-group-item list-group-item-action">{{GameTitle}}</a>
+      </script>
+    </div>
+
+
+<div id="templatedChallenges"></div>
 
   <!-- include JavaScript near the end of the HTML file -->
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
+   <script src="js/handlebars-v4.0.12.js"></script>
+  <script src="js/challengeData.js"></script>
+  <script src="js/search.js"></script>
 </body>
 
 

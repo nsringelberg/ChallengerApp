@@ -87,12 +87,13 @@
   <!-- include JavaScript near the end of the HTML file -->
 
 <script id="challenge-template" type="text/x-handlebars-template"> 
-  {{ChallengeTitle}} for {{GameTitle}} <br>
+  <a href="challenge.html?challengeID={{GameTitle}}%{{index}}"> {{ChallengeTitle}} for {{GameTitle}} </a><br>
 </script>
 
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
   <script src="js/handlebars-v4.0.12.js"></script>
+  <script src="js/challengeData.js"></script>
 	<script src="js/challenger.js"></script>
 </body>
 </html>

@@ -31,7 +31,6 @@ function initializePage() {
         challenge = myChallenges[i];
         var challengeData = JSON.parse(localStorage.getItem(game))[challenge];
         challengeData["GameTitle"] = game;
-        challengeData["index"] = challenge;
         var currHtml = template(challengeData);
         parentDiv.append(currHtml);
     }
