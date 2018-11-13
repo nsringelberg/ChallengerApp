@@ -48,13 +48,16 @@ function initializePage() {
   currData["uid"] = gameTitle.replace(/\s/g,'') + idx;
   var currHtml = template(currData);
   parentDiv.append(currHtml);
-
+  addToList(gameTitle, idx);
+  addToList(gameTitle, idx);
 }
 
 
 function addToList(title, idx){
   var myListGames = localStorage.getItem("myListGames");
   var myListChallenges = localStorage.getItem("myListChallenges");
+  var inList = -1;
+  var place = -1;
   if(myListGames == null){
     myListGames = [];
     myListChallenges = [];
@@ -62,9 +65,35 @@ function addToList(title, idx){
     myListGames = JSON.parse(myListGames);
     myListChallenges = JSON.parse(myListChallenges);
   }
-  myListGames.push(title);
-  myListChallenges.push(idx);
+
+
+  for(game1 in myListGames) {
+    if(myListGames[game1] == title && myListChallenges[game1] == idx){
+
+      inList = 1;
+      place = game1;
+    }
+  }
+  if (inList == 1) {
+    //remove from list
+    myListGames.splice(place, 1);
+    $("#" + title.replace(/\s/g, '')+idx).html("Add to My List");
+    inList = -1;
+  } else {
+    //add to list
+    myListGames.push(title);
+    myListChallenges.push(idx);
+    $("#" + title.replace(/\s/g, '')+idx).html("Remove from My List");
+  }
+
+
   localStorage.setItem("myListGames", JSON.stringify(myListGames));
   localStorage.setItem("myListChallenges", JSON.stringify(myListChallenges));
-  $("#" + title.replace(/\s/g, '')+idx).html("Added");
+
+    //if(myListChallenges.includes(idx) && myListGames.includes(Title)){
+
+  //}
+
+  //if my list already has this item, remove it
+  //$("#" + title.replace(/\s/g, '')+idx).html("Add to My List");
 }
