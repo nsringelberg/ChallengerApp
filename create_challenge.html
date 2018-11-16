@@ -34,22 +34,36 @@
       </ul>
     </div>
   </nav>
-  <a href="index.html">home</a>
+  <!--<a href="index.html">home</a>
   <p>
   this is where you will create a challenge for a game
-  </p>
-  Game: <input type="text" name="create" id="gameTitle"><br>
-  Challenge Title: <input type="text" name="create" id="challengeTitle"><br>
-  Description: <input type="text" name="create" id="description"><br>
-  Difficulty: <input type="radio" name="difficultyBtn" value="easy"> Easy
-              <input type="radio" name="difficultyBtn" value="medium"> Medium
-              <input type="radio" name="difficultyBtn" value="hard"> Hard <br>
+</p>-->
+  <h5>Game:</h5> <!--<input type="text" name="create" id="gameTitle"><br>-->
+  <input type="text" class="form-control" id="gameTitle" placeholder="Game"><br>
+  <h5>Challenge Title:</h5> <!--<input type="text" name="create" id="challengeTitle"><br>-->
+  <input type="text" class="form-control" id="challengeTitle" placeholder="Challenge Title"><br>
+  <h5>Description:</h5><!--<input type="text" name="create" id="description"><br>-->
+  <input type="text" class="form-control" id="description" placeholder="Description"><br>
 
+  <h5>Difficulty: </h5>
+  <input type="radio" name="difficultyBtn" value="easy"> Easy
+  <input type="radio" name="difficultyBtn" value="medium"> Medium
+  <input type="radio" name="difficultyBtn" value="hard"> Hard <br>
+
+  <br>
   <button class="btn btn-primary btn-lg" id="createButton">Create</button>
-
-  <div class="alert alert-danger hidden" id="creationError">
-    Please fill out all fields
+  <br>
+  <br>
+<!--  <div class="alert alert-danger alert-dismissible fade hidden" id="creationError">
+  <strong>Please fill out all fields</strong>
+  <button type="button" class="close" data-dismiss="creationError" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>-->
+  <div class="alert alert-danger alert-dismissible hidden" id="creationError">
+    <strong>Please fill out all fields</strong>
   </div>
+
 
   <div class="alert alert-danger hidden" id="spaghetti">
     I swear to god please don't do that
