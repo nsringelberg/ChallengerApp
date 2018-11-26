@@ -77,6 +77,7 @@ function addToList(title, idx){
   if (inList == 1) {
     //remove from list
     myListGames.splice(place, 1);
+    myListChallenges.splice(place,1);
     $("#" + title.replace(/\s/g, '')+idx).html("Add to My List");
     inList = -1;
   } else {
