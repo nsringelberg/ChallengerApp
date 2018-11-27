@@ -39,31 +39,39 @@
 
 	<div class="navbar navbar-expand-lg navbar-light bg-light tab">
   <button class="tablinks" onclick="openTab(event, 'My List')" id="defaultOpen">My List</button>
-  <!--button class="tablinks" onclick="openTab(event, 'Popular')">Popular</button>
-  <button class="tablinks" onclick="openTab(event, 'Created by Me')">Created by Me</button-->
+  <button class="tablinks" onclick="openTab(event, 'Popular')">Popular</button>
+  <button class="tablinks" onclick="openTab(event, 'Created by Me')">New</button>
 </div>
 
 
 
 <div id="My List" class="tabcontent">
   <list>
-    <h4><div id="myChallenges"></div></h4>
+    <h4 ><div class="challengeList" id="myChallenges"></div>
+    <div id="listEmpty">
+      You have no challenges! Either <a href='search.html'>search for challenges</a> or <a href='create_challenge.html'>create one</a>
+    </div>
+    </h4>
   </list>
 </div>
 
 <div id="Popular" class="tabcontent">
-  <h3>Popular</h3>
 	<list>
-    <a href="challenge.html">challenge 1</a><br>
-    <a href="challenge.html">challenge 2</a><br>
+    <div id="popularChallenges">
+    <h4 >
+      <a class="challengeList" href="challenge.html?challengeID=Mario%0">Mario: beat the game without dying</a><br>
+      <a class="challengeList" href="challenge.html?challengeID=Mario%1">Mario: beat the game without breathing</a><br>
+    </h4>
+    </div>
   </list>
 </div>
 
 <div id="Created by Me" class="tabcontent">
-  <h3>Created by Me</h3>
 	<list>
-    <a href="challenge.html">challenge 1</a><br>
-    <a href="challenge.html">challenge 2</a><br>
+    <h4 >
+      <a class="challengeList" href="challenge.html?challengeID=Mario%0">Mario: beat the game without dying</a><br>
+      <a class="challengeList" href="challenge.html?challengeID=Fortnite%0">Fortnite: win without building</a><br>
+    </h4>
   </list>
 </div>
 

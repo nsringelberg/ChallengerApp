@@ -26,6 +26,12 @@ function initializePage() {
         myChallenges = JSON.parse(myChallenges);
     }
 
+    if(myGames.length == 0){
+        $("#listEmpty").removeClass("hidden");
+    } else{
+        $("#listEmpty").addClass("hidden");
+    }
+
     for(var i=0;i < myGames.length; i++){
         game = myGames[i];
         challenge = myChallenges[i];
